@@ -1,14 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="javascript:void(0)">
       <img src="img/logo.png" alt="" />
     </a>
     <ul class="navbar-nav ms-auto flex-row gap-2">
       <li class="nav-item">
-        <a class="icon-button" href="#"><i class="bi bi-bell fs-4"></i></a>
+        <a class="icon-button position-relative" href="javascript:void(0)">
+          <i class="bi bi-bell fs-4"></i>
+          @if (notificationCount() > 0) {
+            <span
+              class="position-absolute badge rounded-pill bg-danger"
+              style="
+                top: 2px;
+                right: 2px;
+                font-size: 0.6rem;
+                padding: 0.25em 0.4em;
+                transform: translate(30%, -30%);
+              "
+            >
+              {{ notificationCount() }}
+            </span>
+          }
+        </a>
       </li>
       <li class="nav-item">
-        <a class="icon-button" href="#"><i class="bi bi-person-circle fs-5"></i></a>
+        <a class="icon-button" href="javascript:void(0)"
+          ><i class="bi bi-person-circle fs-5"></i
+        ></a>
       </li>
     </ul>
   </div>
