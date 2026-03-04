@@ -1,9 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav
+  class="navbar navbar-expand-lg"
+  [class.navbar-dark]="isDarkMode()"
+  [class.bg-dark]="isDarkMode()"
+  [class.navbar-light]="!isDarkMode()"
+  [class.bg-white]="!isDarkMode()"
+>
   <div class="container">
     <a class="navbar-brand" href="javascript:void(0)">
-      <img src="img/logo.png" alt="" />
+      <span class="navbar-logo">VIRAL<span class="navbar-logo__sub">HOY RD</span></span>
     </a>
-    <ul class="navbar-nav ms-auto flex-row gap-2">
+    <ul class="navbar-nav ms-auto flex-row gap-2 align-items-center">
       <li class="nav-item">
         <a class="icon-button position-relative" href="javascript:void(0)">
           <i class="bi bi-bell fs-4"></i>
@@ -20,6 +26,20 @@
             >
               {{ notificationCount() }}
             </span>
+          }
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="icon-button theme-toggle"
+          href="javascript:void(0)"
+          (click)="toggleTheme()"
+          [title]="isDarkMode() ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+        >
+          @if (isDarkMode()) {
+            <i class="bi bi-sun-fill fs-5 theme-icon"></i>
+          } @else {
+            <i class="bi bi-moon-stars-fill fs-5 theme-icon"></i>
           }
         </a>
       </li>

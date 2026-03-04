@@ -1,24 +1,25 @@
-<div class="container my-4">
+<div class="container search-container my-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8 position-relative">
-      <input
-        type="text"
-        class="form-control form-control-lg rounded-pill pe-5 shadow-sm custom-search-input"
-        placeholder="Busca aqui..."
-        [ngModel]="searchTerm()"
-        (ngModelChange)="searchTerm.set($event)"
-      />
-      @if (searchTerm().trim().length > 0) {
-        <i
-          class="bi bi-x-circle-fill position-absolute top-50 translate-middle-y text-muted fs-5 pb-1"
-          style="right: 3rem; cursor: pointer; z-index: 5"
-          (click)="clearSearch()"
-          title="Limpiar búsqueda"
-        ></i>
-      }
-      <i
-        class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-4 text-muted fs-5 pb-1"
-      ></i>
+      <div class="search-wrapper">
+        <input
+          type="text"
+          class="form-control form-control-lg rounded-pill custom-search-input"
+          placeholder="Busca aquí las noticias que te interesan..."
+          [ngModel]="searchTerm()"
+          (ngModelChange)="searchTerm.set($event)"
+        />
+        <div class="search-icon-group">
+          @if (searchTerm().trim().length > 0) {
+            <i
+              class="bi bi-x-circle-fill clear-search-icon"
+              (click)="clearSearch()"
+              title="Limpiar búsqueda"
+            ></i>
+          }
+          <i class="bi bi-search search-icon"></i>
+        </div>
+      </div>
     </div>
   </div>
 </div>
