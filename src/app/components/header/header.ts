@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -72,21 +72,57 @@ import { Component } from '@angular/core';
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 28px;
-      height: 28px;
-      background: #198754;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       border: 3px solid white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: badgePulse 2s infinite;
     }
 
     .profile-badge i {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
+    }
+
+    /* Verified Badge */
+    .profile-badge.verified {
+      background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+      box-shadow: 0 4px 12px rgba(25, 135, 84, 0.4);
+    }
+
+    .profile-badge.verified:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 20px rgba(25, 135, 84, 0.6);
+    }
+
+    /* Not Verified Badge */
+    .profile-badge.not-verified {
+      background: linear-gradient(135deg, #6c757d 0%, #adb5bd 100%);
+      box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+    }
+
+    .profile-badge.not-verified:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 20px rgba(108, 117, 125, 0.5);
+    }
+
+    @keyframes badgePulse {
+      0%,
+      100% {
+        filter: drop-shadow(0 4px 12px rgba(25, 135, 84, 0.3));
+      }
+      50% {
+        filter: drop-shadow(0 4px 20px rgba(25, 135, 84, 0.6));
+      }
+    }
+
+    .profile-badge.not-verified {
+      animation: none;
     }
 
     @keyframes fadeInDown {
@@ -138,4 +174,12 @@ import { Component } from '@angular/core';
     }
   `,
 })
-export class Header {}
+export class Header {
+  // Signal para controlar si el usuario está verificado (cambiar a false para usuario no verificado)
+  isVerified = signal(false);
+
+  // Método para toggle de verificación (útil para pruebas)
+  toggleVerification() {
+    this.isVerified.update((val) => !val);
+  }
+}

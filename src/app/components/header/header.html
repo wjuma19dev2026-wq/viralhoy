@@ -6,19 +6,26 @@
           Hola, <span class="fw-bold text-dark">Wilson</span> 👋
         </h3>
         <h1 class="header-title fs-1 fw-bold mb-2">
-          <span class="text-gradient">Explore</span> hoy las <br />
-          <span class="text-gradient-secondary">noticias del mundo</span>
+          <span class="text-gradient">Explore</span> hoy lo <br />
+          <span class="text-gradient-secondary">que pasa en RD</span>
         </h1>
         <p class="header-subtitle text-muted fs-6 mb-0">
-          Mantente actualizado con las últimas historias de todo el mundo
+          Mantente actualizado con los chismes más virales y las noticias más relevantes del
+          momento.
         </p>
       </div>
       <div class="profile-section">
         <div class="profile-avatar-wrapper">
           <img src="img/img-author2.jpg" class="profile-avatar" alt="profile" />
-          <div class="profile-badge">
-            <i class="bi bi-check-circle-fill"></i>
-          </div>
+          @if (isVerified()) {
+            <div class="profile-badge verified" title="Usuario verificado">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+          } @else {
+            <div class="profile-badge not-verified" title="Usuario no verificado">
+              <i class="bi bi-clock-history"></i>
+            </div>
+          }
         </div>
       </div>
     </div>

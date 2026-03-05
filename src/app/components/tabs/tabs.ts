@@ -1,9 +1,11 @@
+import { NgClass } from '@angular/common';
 import { Component, input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive, NgClass],
   template: `
     <div class="tabs-wrapper fixed-bottom mx-auto mb-4">
       <nav
@@ -11,8 +13,10 @@ import { Component, input } from '@angular/core';
       >
         <!-- Home -->
         <a
-          class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center active"
-          href="javascript:void(0)"
+          class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/home"
         >
           <i class="bi bi-house-door-fill fs-5"></i>
           <span class="dot bg-white rounded-circle"></span>
@@ -21,7 +25,8 @@ import { Component, input } from '@angular/core';
         <!-- Explore -->
         <a
           class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
-          href="javascript:void(0)"
+          routerLinkActive="active"
+          routerLink="/explore"
         >
           <i class="bi bi-compass fs-5"></i>
         </a>
@@ -29,7 +34,8 @@ import { Component, input } from '@angular/core';
         <!-- Bookmark -->
         <a
           class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
-          href="javascript:void(0)"
+          routerLinkActive="active"
+          routerLink="/bookmark"
         >
           <i class="bi bi-bookmark fs-5"></i>
           @if (bookmarkCount() > 0) {
@@ -45,12 +51,14 @@ import { Component, input } from '@angular/core';
         <!-- Profile -->
         <a
           class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
-          href="javascript:void(0)"
+          routerLink="/profile"
+          routerLinkActive="active"
         >
           <img
             src="https://i.pravatar.cc/100?img=11"
             alt="Profile"
-            class="rounded-circle profile-img"
+            [ngClass]="{ true: 'border border-danger border-2' }"
+            class="rounded-circle profile-img "
             width="24"
             height="24"
           />
@@ -104,6 +112,9 @@ import { Component, input } from '@angular/core';
 
       .profile-img {
         object-fit: cover;
+      }
+      .nav-item.active .profile-img {
+        // Image active options
       }
     `,
   ],
