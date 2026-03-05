@@ -55,6 +55,48 @@ import { BackNav } from '../../../components/back-nav/back-nav';
       transform: scale(1.15);
       box-shadow: 0 6px 20px rgba(25, 135, 84, 0.6);
     }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+
+    .form-control,
+    .form-select {
+      // border-radius: 16px;
+      padding: 12px 12px;
+      font-size: 18px;
+      font-weight: 500;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      color: #212529;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+      // box-shadow: 0 4px 12px rgba(13, 202, 240, 0.08);
+    }
+
+    .form-control::placeholder,
+    .form-select::placeholder {
+      color: #adb5bd;
+      font-weight: 400;
+    }
+
+    .form-control:hover,
+    .form-select:hover {
+      border-color: #0dcaf0;
+      box-shadow: 0 6px 20px rgba(13, 202, 240, 0.15);
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: #0dcaf0;
+      background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%);
+      box-shadow:
+        0 0 0 0.25rem rgba(13, 202, 240, 0.25),
+        0 6px 20px rgba(13, 202, 240, 0.15);
+    }
   `,
 })
 export class Edit {}
