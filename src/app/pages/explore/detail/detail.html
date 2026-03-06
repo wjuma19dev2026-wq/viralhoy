@@ -1,0 +1,105 @@
+<div class="detail-body vh-100 fade-in-on-load">
+  <div class="contenedor-movil h-100 w-100 shadow overflow-hidden position-relative">
+    <header class="seccion-cabecera position-relative text-white">
+      <img
+        src="https://imgs.search.brave.com/0FOOr0cHxoopFUUObxGo7xXoyr6ChUOrgbMvJloGqWI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9vYmFt/YXdoaXRlaG91c2Uu/YXJjaGl2ZXMuZ292/L3NpdGVzL29iYW1h/d2hpdGVob3VzZS5h/cmNoaXZlcy5nb3Yv/ZmlsZXMvdG91dF9p/bWFnZXMvYmFyYWNr/b2JhbWEtaGVhZHNo/b3QuanBn"
+        alt="Barack Obama"
+        class="imagen-fondo w-100 h-100 object-fit-cover"
+      />
+      <div class="superposicion-negra position-absolute top-0 start-0 w-100 h-100"></div>
+
+      <div class="contenido-cabecera position-absolute bottom-0 start-0 p-4 w-100 z-2">
+        <div class="d-flex justify-content-between mb-5 align-items-center">
+          <a
+            (click)="navigateTo()"
+            href="javascript:void(0)"
+            class="text-white icon-button text-decoration-none fs-4"
+            ><i class="bi bi-arrow-left"></i
+          ></a>
+          <a href="#" class="text-white text-decoration-none fs-4"><i class="bi bi-search"></i></a>
+        </div>
+
+        <div class="mb-2">
+          <span class="badge bg-white text-dark rounded-pill py-2 px-3 fw-normal align-middle">
+            <span
+              class="p-1 rounded-circle bg-danger d-inline-block me-1"
+              style="width: 8px; height: 8px"
+            ></span>
+            Entertainment
+          </span>
+        </div>
+
+        <h1 class="titulo-articulo fw-bold text-white fs-2 mb-3">
+          Here's What You Need To Know About Dumplings
+        </h1>
+      </div>
+
+      <div class="botones-accion-flotantes position-absolute end-0 p-4 z-3" style="bottom: -25px">
+        <button class="btn btn-info rounded-circle me-1 shadow action-icon-btn">
+          <i class="bi bi-bookmark-fill text-white"></i>
+        </button>
+        <button class="btn btn-info rounded-circle shadow action-icon-btn">
+          <i class="bi bi-share-fill text-white"></i>
+        </button>
+      </div>
+    </header>
+
+    <main
+      class="cuerpo-articulo text-light p-4 pt-5 rounded-top-5 position-relative mt-n5 z-1"
+      style="background-color: #0f0f0f"
+    >
+      <div class="autor d-flex align-items-center mb-4">
+        <img
+          src="https://randomuser.me/api/portraits/men/32.jpg"
+          alt="Jean Prangley"
+          class="rounded-circle me-3"
+          width="48"
+          height="48"
+        />
+        <div>
+          <h6 class="fw-bold mb-0">Jean Prangley</h6>
+          <small class="text-muted">1 day ago / 234 Views</small>
+        </div>
+      </div>
+
+      <div class="texto-contenido text-light">
+        <p>
+          <span class="capitular fw-bold display-4 float-start me-2 lh-1 text-light">D</span
+          >umplings are intimidating (well, they can be). But they also are, in fact, delicious.
+        </p>
+        <p>
+          No matter what you stuff them with, the concept of pillowy, soft dough encasing a
+          luscious, super flavorful filling is enough to warm you up from inside to out.
+        </p>
+
+        <blockquote class="blockquote border-start border-info border-4 ps-3 py-1 my-4">
+          <p class="mb-0 text-light fw-normal fst-italic">
+            Well, with our homemade dumpling recipe, we're bringing that warm, fuzzy feeling right
+          </p>
+        </blockquote>
+
+        <p>
+          Well, with our homemade dumpling recipe, we're bringing that warm, fuzzy feeling right to
+          your very own kitchen table.
+        </p>
+      </div>
+    </main>
+
+    <footer
+      style="background-color: #0f0f0f"
+      class="barra-comentarios border-top p-3 d-flex align-items-center gap-3 w-100"
+    >
+      <input
+        type="text"
+        class="form-control rounded rounded-5"
+        placeholder="Deja un comentario ..."
+      />
+      <button
+        class="btn btn-info rounded-circle p-2 d-flex align-items-center justify-content-center shadow-sm"
+        style="width: 42px; height: 42px"
+      >
+        <i class="bi bi-send-fill text-white fs-5"></i>
+      </button>
+    </footer>
+  </div>
+</div>

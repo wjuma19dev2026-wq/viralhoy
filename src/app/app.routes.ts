@@ -7,6 +7,7 @@ import { Profile } from './pages/profile/profile';
 import { Layout } from './components/layout/layout';
 import { Bookmark } from './pages/bookmark/bookmark';
 import { Edit } from './pages/profile/edit/edit';
+import { Detail } from './pages/explore/detail/detail';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,7 @@ export const routes: Routes = [
       },
     ],
   },
+  { path: 'notice', children: [{ path: ':noticeId', component: Detail }] },
   { path: 'login', component: Login },
   { path: 'register', component: Register },
   { path: 'profile', component: Profile },

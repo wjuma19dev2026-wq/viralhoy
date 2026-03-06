@@ -19,7 +19,7 @@ import { Component, signal } from '@angular/core';
     .header-title {
       line-height: 1.2;
       margin-bottom: 1rem;
-      animation: fadeInUp 0.8s ease-out;
+      // animation: fadeInUp 0.8s ease-out;
     }
 
     .text-gradient {
@@ -38,13 +38,13 @@ import { Component, signal } from '@angular/core';
 
     .header-subtitle {
       font-size: 0.95rem;
-      animation: fadeInUp 1s ease-out 0.2s both;
+      // animation: fadeInUp 1s ease-out 0.2s both;
     }
 
     .profile-section {
       display: flex;
       align-items: center;
-      animation: fadeInRight 0.8s ease-out;
+      // animation: fadeInRight 0.8s ease-out;
     }
 
     .profile-avatar-wrapper {
@@ -82,7 +82,7 @@ import { Component, signal } from '@angular/core';
       font-size: 0.9rem;
       border: 3px solid white;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: badgePulse 2s infinite;
+      // animation: badgePulse 2s infinite;
     }
 
     .profile-badge i {

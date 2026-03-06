@@ -60,20 +60,18 @@ import { BackNav } from '../../../components/back-nav/back-nav';
       margin-bottom: 8px;
       color: white;
       font-weight: 500;
-      font-size: 1.2rem;
+      // font-size: 1.2rem;
     }
 
     .form-control,
     .form-select {
-      // border-radius: 16px;
-      padding: 12px 12px;
-      font-size: 18px;
-      font-weight: 500;
       background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      padding: 0.75rem 3.5rem 0.75rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 500;
       color: #212529;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      width: 100%;
-      // box-shadow: 0 4px 12px rgba(13, 202, 240, 0.08);
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.08);
     }
 
     .form-control::placeholder,

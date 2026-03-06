@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-path docs --base-href /nombre-repositorio/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:viralhoy": "node dist/viralhoy/server/server.mjs"
@@ -30,6 +30,7 @@
     "@angular/build": "^21.2.0",
     "@angular/cli": "^21.2.0",
     "@angular/compiler-cli": "^21.2.0",
+    "@types/bootstrap": "^5.2.10",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "jsdom": "^28.0.0",

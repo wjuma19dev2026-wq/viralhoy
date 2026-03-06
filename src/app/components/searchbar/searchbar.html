@@ -1,14 +1,44 @@
 <div class="container search-container my-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8 position-relative">
-      <div class="search-wrapper">
+      <div class="search-wrapper search-box search-container" #searchContainer>
         <input
+          #mainSearchInput
           type="text"
-          class="form-control form-control-lg rounded-pill custom-search-input"
+          class="form-control form-control-lg rounded-pill custom-search-input search-input"
           placeholder="Busca aquí los chismes que te interesan..."
           [ngModel]="searchTerm()"
-          (ngModelChange)="searchTerm.set($event)"
+          (click)="onSearchClick()"
         />
+        <div
+          #searchModal
+          class="modal fade"
+          id="searchModal"
+          tabindex="-1"
+          aria-labelledby="searchModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header border-0 pb-1 pt-3 px-3">
+                <div #animatedInputWrapper class="animated-input-container w-100 position-relative">
+                  <!-- Aquí se moverá el input durante/tras la animación -->
+                </div>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body px-3 pt-2">
+                <!-- Resultados, sugerencias, historial, etc. -->
+                <div class="text-center text-muted py-5">Escribe para ver sugerencias...</div>
+                <!-- ... aquí tus resultados ... -->
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="search-icon-group">
           @if (searchTerm().trim().length > 0) {
             <i

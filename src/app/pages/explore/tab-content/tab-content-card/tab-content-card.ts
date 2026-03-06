@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab-content-card',
@@ -33,4 +34,10 @@ import { Component } from '@angular/core';
     }
   `,
 })
-export class TabContentCard {}
+export class TabContentCard {
+  private noticeId = signal<string>('1');
+  private router = inject(Router);
+  navigateTo = () => {
+    this.router.navigate(['notice/' + this.noticeId()]);
+  };
+}

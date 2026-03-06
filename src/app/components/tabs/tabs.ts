@@ -13,7 +13,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       >
         <!-- Home -->
         <a
-          class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
+          class="nav-item position-relative text-decoration-none d-flex flex-column align-items-center"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLink="/home"
@@ -24,7 +24,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
         <!-- Explore -->
         <a
-          class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
+          class="nav-item position-relative text-decoration-none d-flex flex-column align-items-center"
           routerLinkActive="active"
           routerLink="/explore"
         >
@@ -33,7 +33,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
         <!-- Bookmark -->
         <a
-          class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
+          class="nav-item position-relative text-decoration-none d-flex flex-column align-items-center"
           routerLinkActive="active"
           routerLink="/bookmark"
         >
@@ -50,7 +50,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
         <!-- Profile -->
         <a
-          class="nav-item position-relative text-white text-decoration-none d-flex flex-column align-items-center"
+          class="nav-item position-relative text-decoration-none d-flex flex-column align-items-center"
           routerLink="/profile"
           routerLinkActive="active"
         >
@@ -98,8 +98,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         bottom: -10px;
       }
 
+      .nav-item i {
+        color: var(--bs-light);
+      }
+
       .nav-item.active i {
         transform: translateY(-2px);
+        color: var(--bs-info);
       }
 
       .nav-item.active .dot {
